@@ -1,0 +1,54 @@
+<div class="card mb-0">
+    <div class="card-body">
+      <div class="row mb-3 justify-content-end">
+        <div class="col-auto">
+          <button routerLink="/dashboard/surveys/add" class="btn btn-primary mb-3">
+            <i class="feather icon-plus"></i>
+            <span>{{"SURVEY.BUTTONS.ADD" | translate}}</span>
+          </button>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <div class="input-affix">
+            <i class="prefix-icon feather icon-search"></i>
+            <input type="text" class="form-control"   [placeholder]="'SURVEY.TABLE.SEARCH_BY_NAME'| translate">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <ng-select [multiple]="false" >
+            <ng-option *ngFor="let category of categories" [value]="category">{{category}} </ng-option>
+          </ng-select>
+        </div>
+        <div class="col-md-4">
+          <div class="input-affix">
+            <i class="prefix-icon feather icon-search"></i>
+            <input type="date" class="form-control">
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+
+            <table class="table" >
+                <thead>
+                    <tr>   
+                        <th scope="col">Title</th>
+                        <th scope="col">Creator</th> 
+                        <th scope="col">Total</th>
+                        <th scope="col">Answers</th>
+                        <th scope="col">Created by</th>
+                        <th scope="col">Actions</th>  
+                    </tr>
+                </thead>
+                <tbody> 
+                    <tr *ngFor="let row of rows"></tr>
+                </tbody>
+            </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
